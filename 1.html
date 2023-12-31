@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Values</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>N</th>
+            <th>10^N</th>
+            <th>100^N</th>
+            <th>1000^N</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+var tableBody = document.getElementById('tableBody');
+
+for (var i = 1; i <= 7; i++) {
+    var row = document.createElement('tr');
+    var cellN = document.createElement('td');
+    var cell10N = document.createElement('td');
+    var cell100N = document.createElement('td');
+    var cell1000N = document.createElement('td');
+
+    cellN.textContent = i;
+    cell10N.textContent = 10 * i;
+    cell100N.textContent = 100 * i;
+    cell1000N.textContent = 1000 * i;
+
+    row.appendChild(cellN);
+    row.appendChild(cell10N);
+    row.appendChild(cell100N);
+    row.appendChild(cell1000N);
+
+    tableBody.appendChild(row);
+}
+</script>
+
+</body>
+</html>
